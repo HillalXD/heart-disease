@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="bmi">input your bmi</label>
+        <input type="number" id="bmi" name="bmi" required><br>
+
+        <label for="smoking">smoking</label>
+        <select id="smoking" name="smoking" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="stroke">stroke</label>
+        <select id="stroke" name="stroke" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="diffwalking">difficult to walk</label>
+        <select id="diffwalking" name="diffwalking" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="sex">select your gender</label>
+        <select id="sex" name="sex" required>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br>
+
+        <label for="diabetic">have diabetic</label>
+        <select id="diabetic" name="diabetic" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="kidneydisease">have kidney disease</label>
+        <select id="kidneydisease" name="kidneydisease" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="skincancer">have skin cancer</label>
+        <select id="skincancer" name="skincancer" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+    <h2>Prediction: {{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
